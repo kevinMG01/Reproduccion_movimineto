@@ -19,10 +19,12 @@ position = Vector2(0.5, -46)
 scale = Vector2(0.570313, 0.5)
 texture = ExtResource("2_myqta")
 
+[node name="Camera2D" type="Camera2D" parent="Patineta"]
+
 [node name="suelo" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="suelo"]
-position = Vector2(1032, 528)
+position = Vector2(887, 526)
 metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="suelo/StaticBody2D"]
@@ -31,6 +33,19 @@ scale = Vector2(1.82031, 1.9375)
 texture = ExtResource("2_myqta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="suelo/StaticBody2D"]
+position = Vector2(0.75, -2.5)
+shape = SubResource("RectangleShape2D_tgh2n")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="suelo"]
+position = Vector2(2170, 552)
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="suelo/StaticBody2D4"]
+position = Vector2(-0.5, -2)
+scale = Vector2(1.82031, 1.9375)
+texture = ExtResource("2_myqta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo/StaticBody2D4"]
 position = Vector2(0.75, -2.5)
 shape = SubResource("RectangleShape2D_tgh2n")
 
@@ -44,5 +59,18 @@ scale = Vector2(2.95313, 1.9375)
 texture = ExtResource("2_myqta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="suelo/StaticBody2D2"]
+position = Vector2(-47.75, -0.75)
+shape = SubResource("RectangleShape2D_dw2mn")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="suelo"]
+position = Vector2(1508, 432)
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="suelo/StaticBody2D3"]
+position = Vector2(-48, 0.999976)
+scale = Vector2(2.95313, 1.9375)
+texture = ExtResource("2_myqta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo/StaticBody2D3"]
 position = Vector2(-47.75, -0.75)
 shape = SubResource("RectangleShape2D_dw2mn")
