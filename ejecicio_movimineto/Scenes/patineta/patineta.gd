@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-var JUMP_VELOCITY = -330
+var JUMP_VELOCITY = -310
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -12,13 +12,14 @@ var cantidad_saltos = 0
 
 func _physics_process(delta):
 	
-	if altura_salto_acumulado == maxi_altura:
-		JUMP_VELOCITY = altura_salto_acumulado
-	else:
-		JUMP_VELOCITY = -330
+	
 	
 	if is_on_floor():
 		cantidad_saltos = 0
+		if altura_salto_acumulado == maxi_altura:
+			JUMP_VELOCITY = altura_salto_acumulado
+		else:
+			JUMP_VELOCITY = -310
 	
 	if Input.is_action_just_pressed("ui_accept") and cantidad_saltos < 2:
 		cantidad_saltos += 1
