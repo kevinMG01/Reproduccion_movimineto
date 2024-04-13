@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://63tggfd50ieu"]
+
+[ext_resource type="PackedScene" uid="uid://df043xvjfhf68" path="res://Scenes/patineta/patineta.tscn" id="1_4gujb"]
+[ext_resource type="Texture2D" uid="uid://b56uvjocqklyc" path="res://icon.svg" id="2_myqta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgh2n"]
+size = Vector2(234.5, 253)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw2mn"]
+size = Vector2(473.5, 246.5)
+
+[node name="world" type="Node2D"]
+
+[node name="Patineta" parent="." instance=ExtResource("1_4gujb")]
+position = Vector2(1122, 331)
+
+[node name="Icon" type="Sprite2D" parent="Patineta"]
+position = Vector2(0.5, -46)
+scale = Vector2(0.570313, 0.5)
+texture = ExtResource("2_myqta")
+
+[node name="suelo" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="suelo"]
+position = Vector2(113, 526)
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="suelo/StaticBody2D"]
+position = Vector2(-0.5, -2)
+scale = Vector2(1.82031, 1.9375)
+texture = ExtResource("2_myqta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo/StaticBody2D"]
+position = Vector2(0.75, -2.5)
+shape = SubResource("RectangleShape2D_tgh2n")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="suelo"]
+position = Vector2(916, 524)
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="suelo/StaticBody2D2"]
+position = Vector2(0.500015, -0.5)
+scale = Vector2(3.71094, 1.91406)
+texture = ExtResource("2_myqta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="suelo/StaticBody2D2"]
+position = Vector2(0.25, -0.25)
+shape = SubResource("RectangleShape2D_dw2mn")
